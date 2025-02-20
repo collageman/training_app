@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: C0ll@ge2419
+      POSTGRES_DB: userdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U appuser -d userdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  user-service:
+    build: 
+      context: user-service
+    ports:
+      - "8082:8082"
+    environment:
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - APP_PORT=${APP_PORT}
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
