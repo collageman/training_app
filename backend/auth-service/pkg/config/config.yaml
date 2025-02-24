@@ -1,0 +1,40 @@
+# auth-service/config/config.yaml
+server:
+  port: "8080"
+  environment: "development"
+  read_timeout: 15s
+  write_timeout: 15s
+
+database:
+  host: "localhost"
+  port: "5432"
+  user: "admin"
+  password: "adminpass"
+  dbname: "church_training"
+  sslmode: "disable"
+
+redis:
+  host: "localhost"
+  port: "6379"
+  password: ""
+  db: 0
+
+jwt:
+  secret: "your-super-secret-key-change-in-production"
+  access_token_ttl: 15m
+  refresh_token_ttl: 168h # 7 days
+
+email:
+  smtp_host: "smtp.gmail.com"
+  smtp_port: 587
+  smtp_user: "your-email@gmail.com"
+  smtp_password: "your-app-specific-password"
+  from_email: "noreply@churchtraining.com"
+  from_name: "Church Training Platform"
+
+security:
+  max_login_attempts: 5
+  lockout_duration: 15m
+  otp_expiry_time: 15m
+  password_min_length: 8
+  mfa_backup_code_count: 10
