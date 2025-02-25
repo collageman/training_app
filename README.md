@@ -80,8 +80,8 @@ A comprehensive web and mobile platform for training pastors and church leaders,
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-org/church-training-platform.git
-    cd church-training-platform
+    git clone https://github.com/collageman/training_app.git
+    cd training_app
     ```env
 
 2. Start the infrastructure services:
@@ -234,10 +234,6 @@ kubectl apply -k k8s/overlays/prod
 3. Commit your changes
 4. Push to the branch
 5. Create a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details
 
 ## 👥 Team
 
