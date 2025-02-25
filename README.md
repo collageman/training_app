@@ -79,42 +79,42 @@ A comprehensive web and mobile platform for training pastors and church leaders,
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/your-org/church-training-platform.git
-cd church-training-platform
-```
+    ```bash
+    git clone https://github.com/your-org/church-training-platform.git
+    cd church-training-platform
+    ```env
 
 2. Start the infrastructure services:
 
-```bash
-cd docker
-docker-compose up -d
-```
+    ```bash
+    cd docker
+    docker-compose up -d
+    ```
 
 3. Start the backend services:
 
-```bash
-# For each service (auth, media, assessment, chat)
-cd backend/[service]-service
-go mod tidy
-go run cmd/main.go
-```
+    ```bash
+    # For each service (auth, media, assessment, chat)
+    cd backend/[service]-service
+    go mod tidy
+    go run cmd/main.go
+    ```
 
 4. Start the frontend web application:
 
-```bash
-cd frontend/web
-npm install
-npm run dev
-```
+    ```bash
+    cd frontend/web
+    npm install
+    npm run dev
+    ```
 
 5. Start the Flutter mobile app:
 
-```bash
-cd mobile/flutter_app
-flutter pub get
-flutter run
-```
+    ```bash
+    cd mobile/flutter_app
+    flutter pub get
+    flutter run
+    ```
 
 ### Environment Variables
 
@@ -132,7 +132,7 @@ JWT_SECRET=your-secret-key
 
 ## 📁 Project Structure
 
-```
+```plaintext
 church-training-platform/
 ├── backend/
 │   ├── auth-service/
@@ -145,7 +145,6 @@ church-training-platform/
 │   └── flutter_app/
 ├── k8s/
 └── docker/
-```
 
 ## 🔄 API Endpoints
 
@@ -249,4 +248,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📞 Support
 
-For support, email <support@churchtraining.com> or join our Slack channel.
+For support, email <jefferyasamani7@gmail.com>
